@@ -38,7 +38,7 @@ sed -i 's@$(PREFIX)/lib@%{_libdir}@g' Makefile
 
 %files
 %license LICENSE
-%doc *.rst docs/*
+%doc *.rst docs/*.rst
 %{_libdir}/%{name}.so.*
 
 %files devel
