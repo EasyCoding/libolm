@@ -46,3 +46,5 @@ sed -i 's@$(PREFIX)/lib@%{_libdir}@g' Makefile
 %{_libdir}/%{name}.so
 
 %changelog
+* Sun Jun 10 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 2.2.2-1
+- Initial SPEC release.
