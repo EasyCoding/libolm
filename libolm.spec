@@ -2,7 +2,7 @@
 
 Name: libolm
 Version: 2.2.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 Summary: Double Ratchet cryptographic library
 License: ASL 2.0
@@ -46,5 +46,8 @@ sed -i 's@$(PREFIX)/lib@%{_libdir}@g' Makefile
 %{_libdir}/%{name}.so
 
 %changelog
+* Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 2.2.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
+
 * Sun Jun 10 2018 Vitaly Zaitsev <vitaly@easycoding.org> - 2.2.2-1
 - Initial SPEC release.
