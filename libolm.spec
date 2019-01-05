@@ -1,8 +1,8 @@
 %global appname olm
 
 Name: libolm
-Version: 2.2.2
-Release: 2%{?dist}
+Version: 3.0.0
+Release: 1%{?dist}
 
 Summary: Double Ratchet cryptographic library
 License: ASL 2.0
@@ -46,6 +46,9 @@ sed -i 's@$(PREFIX)/lib@%{_libdir}@g' Makefile
 %{_libdir}/%{name}.so
 
 %changelog
+* Sat Jan 05 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 3.0.0-1
+- Updated to version 3.0.0.
+
 * Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 2.2.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
