@@ -33,7 +33,6 @@ mkdir -p %{_target_platform}
 pushd %{_target_platform}
     %cmake -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_SHARED_LIBS=ON \
     -DOLM_TESTS=ON \
     ..
 popd
