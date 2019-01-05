@@ -37,6 +37,11 @@ pushd %{_target_platform}
 popd
 %ninja_build -C %{_target_platform}
 
+%check
+pushd %{_target_platform}/tests
+    ctest --output-on-failure
+popd
+
 %install
 %ninja_install -C %{_target_platform}
 
