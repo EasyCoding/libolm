@@ -53,6 +53,7 @@ popd
 %files devel
 %{_includedir}/%{appname}
 %{_libdir}/%{name}.so
+%{_libdir}/cmake/Olm
 
 %changelog
 * Sat Jan 05 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 3.0.0-1
