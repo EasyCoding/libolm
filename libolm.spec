@@ -10,7 +10,9 @@ URL: https://git.matrix.org/git/%{appname}/about/
 
 Source0: https://git.matrix.org/git/%{appname}/snapshot/%{appname}-%{version}.tar.bz2
 
+BuildRequires: ninja-build
 BuildRequires: gcc-c++
+BuildRequires: cmake
 BuildRequires: gcc
 
 %description
@@ -25,16 +27,18 @@ Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 
 %prep
 %autosetup -n %{appname}-%{version} -p1
-sed -i 's@$(PREFIX)/lib@%{_libdir}@g' Makefile
+mkdir -p %{_target_platform}
 
 %build
-%set_build_flags
-%make_build
+pushd %{_target_platform}
+    %cmake -G Ninja \
+    -DCMAKE_BUILD_TYPE=Release \
+    ..
+popd
+%ninja_build -C %{_target_platform}
 
 %install
-%make_install DESTDIR=%{buildroot} PREFIX=%{_prefix}
-
-%ldconfig_scriptlets
+%ninja_install -C %{_target_platform}
 
 %files
 %license LICENSE
