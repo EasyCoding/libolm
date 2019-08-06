@@ -48,7 +48,7 @@ popd
 %files
 %license LICENSE
 %doc *.rst docs/*.rst
-%{_libdir}/%{name}.so.*
+%{_libdir}/%{name}.so.3*
 
 %files devel
 %{_includedir}/%{appname}
