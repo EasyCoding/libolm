@@ -1,14 +1,13 @@
 %global appname olm
 
 Name: libolm
-Version: 3.0.0
-Release: 3%{?dist}
+Version: 3.1.3
+Release: 1%{?dist}
 
 Summary: Double Ratchet cryptographic library
 License: ASL 2.0
-URL: https://git.matrix.org/git/%{appname}/about/
-
-Source0: https://git.matrix.org/git/%{appname}/snapshot/%{appname}-%{version}.tar.bz2
+URL: https://gitlab.matrix.org/matrix-org/%{appname}
+Source0: https://gitlab.matrix.org/matrix-org/%{appname}/-/archive/%{version}/%{appname}-%{version}.tar.bz2
 
 BuildRequires: ninja-build
 BuildRequires: gcc-c++
@@ -57,6 +56,9 @@ popd
 %{_libdir}/cmake/Olm
 
 %changelog
+* Tue Aug 06 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.3-1
+- Updated to version 3.1.3.
+
 * Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 3.0.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
