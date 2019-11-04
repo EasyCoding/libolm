@@ -1,7 +1,7 @@
 %global appname olm
 
 Name: libolm
-Version: 3.1.3
+Version: 3.1.4
 Release: 1%{?dist}
 
 Summary: Double Ratchet cryptographic library
@@ -56,6 +56,9 @@ popd
 %{_libdir}/cmake/Olm
 
 %changelog
+* Mon Nov 04 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.4-1
+- Updated to version 3.1.4.
+
 * Tue Aug 06 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.3-1
 - Updated to version 3.1.3.
 
