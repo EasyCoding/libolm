@@ -84,6 +84,7 @@ popd
 %changelog
 * Mon Nov 04 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.4-1
 - Updated to version 3.1.4.
+- Added Python 3 bindings.
 
 * Tue Aug 06 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.3-1
 - Updated to version 3.1.3.
