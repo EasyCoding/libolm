@@ -14,6 +14,10 @@ BuildRequires: gcc-c++
 BuildRequires: cmake
 BuildRequires: gcc
 
+BuildRequires: python3-devel
+BuildRequires: python3dist(cffi)
+BuildRequires: python3dist(future)
+
 %description
 An implementation of the Double Ratchet cryptographic ratchet in C++.
 
@@ -21,12 +25,21 @@ An implementation of the Double Ratchet cryptographic ratchet in C++.
 Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 
+%package python3
+Summary: Python 3 bindings for %{name}
+%{?python_provide:%python_provide python3-%{appname}}
+Requires: %{name}%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
+
 %description devel
+%{summary}.
+
+%description python3
 %{summary}.
 
 %prep
 %autosetup -n %{appname}-%{version} -p1
 mkdir -p %{_target_platform}
+sed -e "s@/build@/%{_target_platform}@g" -i python/olm_build.py
 
 %build
 pushd %{_target_platform}
@@ -37,6 +50,10 @@ pushd %{_target_platform}
 popd
 %ninja_build -C %{_target_platform}
 
+pushd python
+%py3_build
+popd
+
 %check
 pushd %{_target_platform}/tests
     ctest --output-on-failure
@@ -44,6 +61,10 @@ popd
 
 %install
 %ninja_install -C %{_target_platform}
+
+pushd python
+%py3_install
+popd
 
 %files
 %license LICENSE
@@ -54,6 +75,11 @@ popd
 %{_includedir}/%{appname}
 %{_libdir}/%{name}.so
 %{_libdir}/cmake/Olm
+
+%files python3
+%{python3_sitearch}/%{appname}
+%{python3_sitearch}/_%{name}.abi3.so
+%{python3_sitearch}/python_%{appname}-*.egg-info
 
 %changelog
 * Mon Nov 04 2019 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.4-1
