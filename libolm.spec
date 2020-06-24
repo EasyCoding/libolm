@@ -2,7 +2,7 @@
 
 Name: libolm
 Version: 3.1.4
-Release: 3%{?dist}
+Release: 4%{?dist}
 
 Summary: Double Ratchet cryptographic library
 License: ASL 2.0
@@ -15,6 +15,7 @@ BuildRequires: cmake
 BuildRequires: gcc
 
 BuildRequires: python3-devel
+BuildRequires: python3-setuptools
 BuildRequires: python3dist(cffi)
 BuildRequires: python3dist(future)
 
@@ -82,6 +83,9 @@ popd
 %{python3_sitearch}/python_%{appname}-*.egg-info
 
 %changelog
+* Wed Jun 24 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 3.1.4-4
+- Added python3-setuptools to build requirements.
+
 * Tue May 26 2020 Miro Hrončok <mhroncok@redhat.com> - 3.1.4-3
 - Rebuilt for Python 3.9
 
