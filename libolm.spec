@@ -73,6 +73,7 @@ popd
 %{_includedir}/%{appname}
 %{_libdir}/%{name}.so
 %{_libdir}/cmake/Olm
+%{_libdir}/pkgconfig/%{appname}.pc
 
 %files python3
 %{python3_sitearch}/%{appname}
