@@ -3,7 +3,7 @@
 
 Name: libolm
 Version: 3.2.4
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 Summary: Double Ratchet cryptographic library
 License: ASL 2.0
@@ -81,6 +81,9 @@ popd
 %{python3_sitearch}/python_%{appname}-*.egg-info
 
 %changelog
+* Fri Jun 04 2021 Python Maint <python-maint@redhat.com> - 3.2.4-2
+- Rebuilt for Python 3.10
+
 * Wed Jun 02 2021 Vitaly Zaitsev <vitaly@easycoding.org> - 3.2.4-1
 - Updated to version 3.2.4.
 
